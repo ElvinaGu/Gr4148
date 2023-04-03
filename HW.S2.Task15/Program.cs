@@ -7,7 +7,7 @@ Console.Write("Введите цифру дня недели: ");
 //Введение переменной, проверка на "пустоту" значения
 int day = int.Parse(Console.ReadLine() ?? "0");
 
-if (day < 1 && day > 7)
+if (day < 1 || day > 7)
 {
   Console.WriteLine("Не является днем недели");
 }
