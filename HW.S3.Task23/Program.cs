@@ -25,6 +25,5 @@ string LineGen(int num, int pow)
 
 int numN = ReadData("Введите число N: ");
 Console.WriteLine(LineGen(numN,1));
-Console.WriteLine(LineGen(numN,2));
 Console.WriteLine(LineGen(numN,3));
 
