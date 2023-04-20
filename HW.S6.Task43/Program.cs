@@ -3,36 +3,36 @@
 // задаются пользователем.
 
 //Метод читает данные от пользователя
-int ReadData(string msg)
+double ReadData(string msg)
 {
   Console.Write(msg);
-  int res = int.Parse(Console.ReadLine() ?? "0");
+  double res = double.Parse(Console.ReadLine() ?? "0");
   return res;
 };
 
 //Метод обнаружения точки пересечения прямых
-string CoordIntersecPoint(int pB1, int pK1, int pB2, int pK2)
+string CoordIntersecPoint(double pB1, double pK1, double pB2, double pK2)
 {
   string point = "";
-  int x = 0;
-  int y = 0;
+  double x = 0;
+  double y = 0;
   if (pK1 == pK2)
   {
     return ("Прямые параллельны");
   }
   else
   {
-    x = (pB2 - pB1) / ((pK1 - pK2)); //преобразованное уравнение
-    y = pK1 * x + pB1;
-    point = point + x + ";" + y;
+    x = Math.Round((pB2 - pB1) / ((pK1 - pK2)), 2); //преобразованное уравнение
+    y = Math.Round(pK1 * x + pB1, 2);
+    point = point + x + "; " + y;
     return point;
   }
 
 }
 
-int b1 = ReadData("Введите значение b1: ");
-int k1 = ReadData("Введите значение k1: ");
-int b2 = ReadData("Введите значение b2: ");
-int k2 = ReadData("Введите значение k2: ");
+double b1 = ReadData("Введите значение b1: ");
+double k1 = ReadData("Введите значение k1: ");
+double b2 = ReadData("Введите значение b2: ");
+double k2 = ReadData("Введите значение k2: ");
 string z = CoordIntersecPoint(b1, k1, b2, k2);
 Console.WriteLine("Координаты точки пересечения Z: " + z);
